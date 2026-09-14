@@ -1,0 +1,53 @@
+{
+  "Adult": {
+    "quality_score": 89.8,
+    "data_shape_original": [4000, 7],
+    "data_shape_fixed": [3997, 7],
+    "impact_analysis": {
+      "rf": {
+        "original": {"accuracy": 0.74, "f1": 0.66, "roc_auc": 0.0},
+        "fixed": {"accuracy": 0.74, "f1": 0.66, "roc_auc": 0.0},
+        "improvement": {"accuracy": 0.0, "f1": 0.0, "roc_auc": 0.0}
+      },
+      "lr": {
+        "original": {"accuracy": 0.75, "f1": 0.648, "roc_auc": 0.0},
+        "fixed": {"accuracy": 0.75, "f1": 0.648, "roc_auc": 0.0},
+        "improvement": {"accuracy": 0.0, "f1": 0.0, "roc_auc": 0.0}
+      }
+    }
+  },
+  "Titanic": {
+    "quality_score": 90.0,
+    "data_shape_original": [712, 7],
+    "data_shape_fixed": [712, 7],
+    "impact_analysis": {
+      "rf": {
+        "original": {"accuracy": 0.581, "f1": 0.542, "roc_auc": 0.0},
+        "fixed": {"accuracy": 0.581, "f1": 0.542, "roc_auc": 0.0},
+        "improvement": {"accuracy": 0.0, "f1": 0.0, "roc_auc": 0.0}
+      },
+      "lr": {
+        "original": {"accuracy": 0.631, "f1": 0.489, "roc_auc": 0.0},
+        "fixed": {"accuracy": 0.631, "f1": 0.489, "roc_auc": 0.0},
+        "improvement": {"accuracy": 0.0, "f1": 0.0, "roc_auc": 0.0}
+      }
+    }
+  },
+  "Credit Card Fraud": {
+    "quality_score": 75.0,
+    "data_shape_original": [8000, 30],
+    "data_shape_fixed": [8000, 30],
+    "impact_analysis": {
+      "rf": {
+        "original": {"accuracy": 0.9975, "f1": 0.9963, "roc_auc": 0.0},
+        "fixed": {"accuracy": 0.9975, "f1": 0.9963, "roc_auc": 0.0},
+        "improvement": {"accuracy": 0.0, "f1": 0.0, "roc_auc": 0.0}
+      },
+      "lr": {
+        "original": {"accuracy": 0.9975, "f1": 0.9963, "roc_auc": 0.0},
+        "fixed": {"accuracy": 0.9975, "f1": 0.9963, "roc_auc": 0.0},
+        "improvement": {"accuracy": 0.0, "f1": 0.0, "roc_auc": 0.0}
+      }
+    }
+  }
+}

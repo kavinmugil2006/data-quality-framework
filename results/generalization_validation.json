@@ -1,0 +1,89 @@
+{
+  "Adult": {
+    "train_quality_score": 89.85,
+    "test_f1_scores": {
+      "RF": 0.6648050010082678,
+      "LR": 0.6482508551881414
+    },
+    "test_accuracy_scores": {
+      "RF": 0.74,
+      "LR": 0.754
+    },
+    "avg_test_f1": 0.6565279280982046,
+    "avg_test_accuracy": 0.747,
+    "train_shape": [
+      4000,
+      7
+    ],
+    "test_shape": [
+      1000,
+      7
+    ],
+    "train_shape_fixed": [
+      3997,
+      7
+    ],
+    "test_shape_fixed": [
+      1000,
+      7
+    ]
+  },
+  "Titanic": {
+    "train_quality_score": 90.0,
+    "test_f1_scores": {
+      "RF": 0.5419745548234801,
+      "LR": 0.4885972296625086
+    },
+    "test_accuracy_scores": {
+      "RF": 0.5810055865921788,
+      "LR": 0.6312849162011173
+    },
+    "avg_test_f1": 0.5152858922429944,
+    "avg_test_accuracy": 0.6061452513966481,
+    "train_shape": [
+      712,
+      7
+    ],
+    "test_shape": [
+      179,
+      7
+    ],
+    "train_shape_fixed": [
+      712,
+      7
+    ],
+    "test_shape_fixed": [
+      179,
+      7
+    ]
+  },
+  "Credit Fraud": {
+    "train_quality_score": 75.0,
+    "test_f1_scores": {
+      "RF": 0.9962515644555695,
+      "LR": 0.9962515644555695
+    },
+    "test_accuracy_scores": {
+      "RF": 0.9975,
+      "LR": 0.9975
+    },
+    "avg_test_f1": 0.9962515644555695,
+    "avg_test_accuracy": 0.9975,
+    "train_shape": [
+      8000,
+      30
+    ],
+    "test_shape": [
+      2000,
+      30
+    ],
+    "train_shape_fixed": [
+      8000,
+      30
+    ],
+    "test_shape_fixed": [
+      2000,
+      30
+    ]
+  }
+}

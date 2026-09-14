@@ -1,0 +1,27 @@
+
+======================================================================
+GENERALIZATION VALIDATION REPORT
+======================================================================
+
+Adult:
+  Train Quality Score: 89.8/100
+  Test F1 Score: 0.6565
+  Test Accuracy: 0.7470
+  Train shape (original -> fixed): (4000, 7) -> (3997, 7)
+  Test shape (original -> fixed): (1000, 7) -> (1000, 7)
+
+Titanic:
+  Train Quality Score: 90.0/100
+  Test F1 Score: 0.5153
+  Test Accuracy: 0.6061
+  Train shape (original -> fixed): (712, 7) -> (712, 7)
+  Test shape (original -> fixed): (179, 7) -> (179, 7)
+
+Credit Fraud:
+  Train Quality Score: 75.0/100
+  Test F1 Score: 0.9963
+  Test Accuracy: 0.9975
+  Train shape (original -> fixed): (8000, 30) -> (8000, 30)
+  Test shape (original -> fixed): (2000, 30) -> (2000, 30)
+
+======================================================================
