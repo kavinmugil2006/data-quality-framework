@@ -126,12 +126,23 @@ class ImpactAnalyzer:
         
         # Prepare fixed data with fresh encoders
         try:
-            encoders_orig = self.label_encoders.copy()
             self.label_encoders = {}
             X_fixed, y_fixed = self._prepare_data(df_fixed, target_col)
         except Exception as e:
             print(f"Error preparing fixed data: {e}")
             return results
+
+        # Ensure both datasets use the same feature columns and target encoding.
+        feature_columns = sorted(set(X_orig.columns) | set(X_fixed.columns))
+        X_orig = X_orig.reindex(columns=feature_columns, fill_value=0)
+        X_fixed = X_fixed.reindex(columns=feature_columns, fill_value=0)
+
+        if len(y_orig) > 0 and len(y_fixed) > 0:
+            original_values = y_orig.astype(str)
+            fixed_values = y_fixed.astype(str)
+            label_map = {label: idx for idx, label in enumerate(sorted(set(original_values) | set(fixed_values)))}
+            y_orig = original_values.map(label_map).astype(int)
+            y_fixed = fixed_values.map(label_map).astype(int)
         
         # Evaluate each model
         for model_name in models:
