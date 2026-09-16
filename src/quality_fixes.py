@@ -147,14 +147,24 @@ class QualityFixer:
         
         return df
     
-    def scale_features(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Standardize numeric features"""
+    def scale_features(self, df: pd.DataFrame, target_col: str = None) -> pd.DataFrame:
+        """Standardize numeric features while leaving the target column untouched."""
         df = df.copy()
-        numeric_cols = df.select_dtypes(include=[np.number]).columns
-        
+
+        if target_col is None:
+            target_col = df.columns[-1] if len(df.columns) > 0 else None
+
+        numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+        if target_col is not None and target_col in numeric_cols:
+            numeric_cols = [col for col in numeric_cols if col != target_col]
+
+        if not numeric_cols:
+            self.fixes_applied['scaling'] = 'No numeric features to scale'
+            return df
+
         scaler = StandardScaler()
         df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
-        
+
         self.fixes_applied['scaling'] = 'StandardScaler applied'
         return df
     
@@ -185,7 +195,8 @@ class QualityFixer:
             df = self.fix_imbalance(df, method='undersample')
         
         if config.get('scale'):
-            df = self.scale_features(df)
+            target_col = df.columns[-1] if len(df.columns) > 0 else None
+            df = self.scale_features(df, target_col=target_col)
         
         return df
     
